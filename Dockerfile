@@ -22,7 +22,7 @@ WORKDIR /var/www/html/
 COPY . /var/www/html/
 
 # 💡 KUNCI PERBAIKAN 2: Jalankan instalasi library Composer secara otomatis di server
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-mongodb
 
 # Atur hak akses folder agar Apache bisa membaca file dengan lancar
 RUN chown -R www-data:www-data /var/www/html
